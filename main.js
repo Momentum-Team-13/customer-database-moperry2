@@ -10,7 +10,7 @@ for (let customer of customers) {
   console.log(`${customer.name.first} ${customer.name.last}`);
   let customerDiv = document.createElement("div");
   customerDiv.classList.add("person");
-  // What's in the box
+  // What's in the box:
   //Image
   let imageCust = document.createElement("img");
   imageCust.classList.add("img");
@@ -18,7 +18,6 @@ for (let customer of customers) {
   customerDiv.appendChild(imageCust);
 
   //Name
-
   let nameEl = document.createElement("h3");
   nameEl.innerText = `${capitalizeFirstLetter(
     customer.name.first
@@ -38,13 +37,8 @@ for (let customer of customers) {
     ${nameToAbbr(customer.location.state)}
     ${customer.location.postcode}`;
   customerDiv.appendChild(addressEl);
-  //DOB
-  //   let customerDOBP = document.createElement("p");
-  //   let dateOfBirth = moment(customer.dob.date).format("MMM D, YYYY");
-  //   console.log(dateOfBirth);
-  //   customerDOBP.innerText = `DOB: ${dateOfBirth}`;
-  //   customerDiv.appendChild(customerDOBP);
 
+  //DOB
   let dobElement = document.createElement("div");
   let dobFormat = moment(customer.dob.date).format("MMM D, YYYY");
   dobElement.classList.add("f5", "fw4", "black", "mt0");
@@ -57,26 +51,5 @@ for (let customer of customers) {
   customerSinceElement.innerText = `Customer since: ${registeredFormat}`;
   customerDiv.appendChild(customerSinceElement);
 
-  //   let dobEl = document.createElement("div");
-  //   dobEl.innerText = `${moment(customer.dob.date).format("MMM Do YYYY")}`;
-  //   customerDiv.appendChild(dobEl);
-
-  //   let dorEl = document.createElement("div");
-  //   dorEl.innerText = `${moment(customer.registered.date).format("MMM Do YYYY")}`;
-  //   customerDiv.appendChild(dorEl);
-
   allCustomers.appendChild(customerDiv);
 }
-//   let imageElement = document.createElement("img");
-//   imageElement.src = "http://placekitten.com/g/600/300";
-//   imageElement.alt = "image of kitten";
-//   imageElement.classList.add("db", "w-100", "br2", "br--top");
-//   contentElement.appendChild(imageElement);
-//   reportElement.appendChild(contentElement);
-//   let infoElement = document.createElement("div");
-//   infoElement.classList.add("pa2", "ph3-ns", "pb3-ns");
-//   let cityElement = document.createElement("h1");
-//   cityElement.classList.add("5", "f4-ns", "mv0");
-//   cityElement.innerText = `Location: ${report.city}`;
-//   contentElement.appendChild(cityElement);
-//   weatherList.appendChild(reportElement);
